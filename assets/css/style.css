@@ -1,0 +1,120 @@
+:root {
+    --bg-color: #0A0E17;       /* Femto Black */
+    --text-color: #E2E8F0;     /* Light Gray */
+    --primary: #6366F1;        /* Neural Blue */
+    --accent: #EA580C;         /* Rust Orange */
+    --secondary: #94A3B8;      /* Memory Gray */
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 { font-family: var(--font-mono); color: #fff; }
+h1 { font-size: 3rem; margin-bottom: 1rem; }
+.subtitle { font-size: 1.25rem; color: var(--secondary); margin-bottom: 2rem; }
+
+/* Navigation */
+.navbar { padding: 20px 0; border-bottom: 1px solid #1E293B; }
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-family: var(--font-mono); font-weight: bold; }
+.nav-links { list-style: none; display: flex; gap: 30px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--secondary); font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    padding: 10px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: #4F46E5; }
+.btn-secondary { border: 1px solid var(--secondary); color: var(--text-color); }
+.btn-secondary:hover { border-color: #fff; }
+
+/* Terminal Hero */
+.hero { padding: 100px 0; text-align: center; }
+.terminal-window {
+    background: #1E293B;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    text-align: left;
+    overflow: hidden;
+    border: 1px solid #334155;
+}
+.terminal-header {
+    background: #0F172A;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #EF4444; }
+.yellow { background: #F59E0B; }
+.green { background: #10B981; }
+.terminal-title { margin-left: 10px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--secondary); }
+.terminal-body { padding: 20px; font-family: var(--font-mono); font-size: 0.9rem; }
+.prompt { color: var(--accent); }
+.output { color: var(--secondary); }
+.output.success { color: #10B981; }
+.cursor { animation: blink 1s infinite; }
+
+/* Features */
+.features { padding: 80px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.card {
+    background: #1E293B;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    transition: 0.3s;
+}
+.card:hover { transform: translateY(-5px); border-color: var(--primary); }
+.card h3 { margin-bottom: 10px; color: var(--primary); }
+.card p { color: var(--secondary); font-size: 0.95rem; }
+
+/* Token */
+.token-section { padding: 80px 0; background: #0F172A; text-align: center; }
+.token-stats { display: flex; justify-content: center; gap: 50px; margin: 40px 0; flex-wrap: wrap; }
+.stat { display: flex; flex-direction: column; }
+.stat .label { color: var(--secondary); font-size: 0.9rem; }
+.stat .value { color: #fff; font-family: var(--font-mono); font-size: 1.5rem; font-weight: bold; }
+.disclaimer { font-size: 0.8rem; color: var(--secondary); max-width: 600px; margin: 0 auto; }
+
+/* Footer */
+footer { padding: 40px 0; border-top: 1px solid #1E293B; text-align: center; }
+.footer-content { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+.links { display: flex; gap: 20px; }
+.links a { color: var(--secondary); text-decoration: none; }
+.copyright { color: var(--secondary); font-size: 0.8rem; }
+
+/* Animations */
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Mobile */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .nav-links { display: none; } /* Simplified for demo */
+}
